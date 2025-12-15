@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tambah Transaksi</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
 	<script>
 		function showMessage(message) {
@@ -75,14 +76,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				<input type="text" name="description" id="description" rows="4" placeholder="Description" required>
 			</div>
 
-			<div class="form-actions">
-				<button type="submit">Tambah</button>
+			<div class="form-actions text-center">
+				<button type="submit" class="">Tambah</button>
 				<br>
-				<a href="index.php">Kembali</a>
 			</div>
+			<a href="index.php">Kembali</a>
 		</form>
 
 	</div>
-</body>
+	</body>
 
-</html>
+	<!-- Bootstrap Bundle with Popper (local) -->
+	<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	</html>

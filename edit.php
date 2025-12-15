@@ -51,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 
 <head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Ubah Transaksi</title>
 </head>
@@ -92,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         function showModal(src) {
             const modal = document.getElementById("imageModal");
             const modalImage = document.getElementById("modalImage");
-            modal.style.display = "block";
+            modal.style.display = "flex";
             modalImage.src = src;
         }
 
@@ -101,6 +102,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             modal.style.display = "none";
         }
     </script>
+
+    <!-- Bootstrap Bundle with Popper (local) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

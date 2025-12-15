@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 
 <head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Forgot Password</title>
     <style>
@@ -75,6 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             alert("<?php echo addslashes($message); ?>");
         <?php endif; ?>
     </script>
+
+    <!-- Bootstrap Bundle with Popper (local) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
