@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
-    exit;
+	header("Location: login.php");
+	exit;
 }
 
 include 'config.php';
@@ -16,19 +16,17 @@ $query->execute();
 $result = $query->get_result();
 
 if ($result->num_rows > 0) {
-    $transaction = $result->fetch_assoc();
+	$transaction = $result->fetch_assoc();
 
-    // Delete the transaction
-    $deleteQuery = $conn->prepare("DELETE FROM transactions WHERE id = ? AND user_id = ?");
-    $deleteQuery->bind_param("ii", $id, $user_id);
-    if ($deleteQuery->execute()) {
-        // Set a success message in the session
-        $_SESSION['message'] = "Delete berhasil dihapus.";
-    } else {
-        $_SESSION['message'] = "Gagal menghapus data.";
-    }
+	$deleteQuery = $conn->prepare("DELETE FROM transactions WHERE id = ? AND user_id = ?");
+	$deleteQuery->bind_param("ii", $id, $user_id);
+	if ($deleteQuery->execute()) {
+		$_SESSION['message'] = "Delete berhasil dihapus.";
+	} else {
+		$_SESSION['message'] = "Gagal menghapus data.";
+	}
 } else {
-    $_SESSION['message'] = "Data tidak ditemukan.";
+	$_SESSION['message'] = "Data tidak ditemukan.";
 }
 
 header("Location: index.php");
